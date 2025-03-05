@@ -61,3 +61,223 @@ print(missing)
 # enter arr1: 1 2 4 5
 # 3
 
+def missing(arr):
+    n=len(arr)+1
+    expectedsum=n*(n+1)//2
+    originalsum=sum(arr)
+    missing=expectedsum-originalsum
+    return(missing)
+
+arr=[int(i) for i in input("enter arr: ").split()]
+print(missing(arr))
+
+# output
+# enter arr1: 1 2 4 5
+# 3
+
+# to find all missing numbers\
+def missing(arr):
+    arr=sorted(arr)  # Sort the array to ensure numbers are in order
+    n=arr[-1] # Get the last number as the maximum expected value
+    fullset=set(range(arr[0],n+1)) # Create a set from min to max number
+    missing=list(fullset - set(arr))
+    return(missing)
+
+arr=[int(i) for i in input("enter arr: ").split()]
+print(missing(arr))
+
+# output:
+# enter arr: 1 2 5 6 8 9
+# [3, 4, 7]
+
+
+
+# starpattens with numbers
+
+rows = int(input("enter rows"))
+val=1
+for i in range(1,rows+1):
+    for j in range (1,i+1):
+        print(val,end=" ")
+        val+=1
+    print()
+
+# output
+# enter rows5
+# 1 
+# 2 3 
+# 4 5 6 
+# 7 8 9 10 
+# 11 12 13 14 15 
+
+# question 2
+
+rows = int(input("enter rows: "))
+# val=1
+for i in range(1,rows+1):
+    val = i
+    for j in range (1,i+1):
+        print(val,end=" ")
+        val+=1
+    print()
+
+# output
+# enter rows: 5
+# 1 
+# 2 3 
+# 3 4 5 
+# 4 5 6 7 
+# 5 6 7 8 9 
+
+# question 3
+rows = int(input("enter rows: "))
+# val=1
+for i in range(1,rows+1):
+    val = i
+    for j in range (1,i+1):
+        print(val,end=" ")
+        val+= rows-j
+    print()
+
+# output
+# enter rows: 5
+# 1 
+# 2 6 
+# 3 7 10 
+# 4 8 11 13 
+# 5 9 12 14 15
+
+# question4
+rows = int(input("enter rows: "))
+# val=1
+for i in range(1,rows+1):
+    val = i
+    for j in range (1,i+1):
+        print(val,end=" ")
+        val=val+rows-j
+    print()
+
+# output
+# enter rows: 5
+# 1 
+# 2 6 
+# 3 7 10 
+# 4 8 11 13 
+# 5 9 12 14 15 
+
+# printng prime numbers in start patterns
+rows = int(input("enter rows: "))
+ele=(rows*(rows+1))//2
+# val=1
+arr=[]
+def prime(n):
+    if n>1:
+        for i in range(2,n//2+1):
+            if n%i==0:
+                return False
+        return True
+    return False
+i=1
+while len(arr)<ele:
+    if prime(i):
+        arr.append(i)
+    i+=1
+print(arr)
+
+for i in range(1,rows+1):
+    val=i-1
+    for j in range (1,i+1):
+        print(arr[val],end=" ")
+        val+=rows-j
+    print()
+
+# output
+# enter rows: 5
+# [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+# 2 
+# 3 13 
+# 5 17 29 
+# 7 19 31 41 
+# 11 23 37 43 47 
+
+# another pattern
+rows = int(input("enter rows: "))
+ele=(rows*(rows+1))//2
+# val=1
+arr=[]
+def prime(n):
+    if n>1:
+        for i in range(2,n//2+1):
+            if n%i==0:
+                return False
+        return True
+    return False
+i=1
+while len(arr)<ele:
+    if prime(i):
+        arr.append(i)
+    i+=1
+print(arr)
+val=0
+for i in range(1,rows+1):
+    # val=1
+    for j in range (1,i+1):
+        print(arr[val],end=" ")
+        val+= 1
+    print()
+
+# enter rows: 5
+# [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+# 2 
+# 3 5 
+# 7 11 13 
+# 17 19 23 29 
+# 31 37 41 43 47 
+# dimond patten
+
+rows = int(input("enter: "))
+
+for i in range(1,2*rows):
+    stars = i if i<=rows else 2*rows-i
+    spaces = rows-i if i<=rows else i-rows
+    print(" "*spaces,end="")
+    print("* "*stars)
+
+# output
+# enter: 5
+#     * 
+#    * * 
+#   * * * 
+#  * * * * 
+# * * * * * 
+#  * * * * 
+#   * * * 
+#    * * 
+#     * 
+
+# hallo dimaond
+rows = int(input("enter: "))
+
+for i in range(1,2*rows):
+    # stars = i if i<=rows else 2*rows-i
+    spaces = rows-i if i<=rows else i-rows
+    print(" "*spaces,end="")
+    for j in range(1,rows+1):
+        if j==1 or i==j or i+j==2*rows:
+            print("* ",end="")
+        else:
+            print("  ",end='')
+        # print("* ",end="")
+    print()
+
+# output
+# enter: 5
+#     *         
+#    * *       
+#   *   *     
+#  *     *   
+# *       * 
+#  *     *   
+#   *   *     
+#    * *       
+#     *  
