@@ -131,7 +131,7 @@ for i in range(k):
     num[0] = last  # Place last element at the first position
 
 print(*num)
-
+ 
 # output
 # 1,2,3,4,5
 # 3
@@ -161,3 +161,39 @@ print(* num)
 # 3
 # 3 4 5 1 2
 ##################################################################################################################
+# amstrong number
+num = input("enter: ")
+length = len(num)
+c_sum = 0
+for i in num:
+    num_i = int(i)
+    c_sum += num_i**length
+    
+if(c_sum == int(num)):
+    print("amstrong")
+else:
+    print("not")
+# output
+# 371
+# amstrong
+############################################################################################################
+# Lowest two values from array
+# [1,2,5,7,8,-1,-1]
+# Convert Helloworld to given output
+# HelloWOrld
+#hello worlD
+
+arr=input("enter:--").split()
+low1=float("inf")
+low2=float("inf")
+
+for i in arr:
+    if i < str(low1):
+        low2=low1
+        low1=i
+    elif i < str(low2):
+        low2=i
+print(low1,low2)
+# op
+# enter:--1 2 3 4 5 -2 -1
+# -1 -2

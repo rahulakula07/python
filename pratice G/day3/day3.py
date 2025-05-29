@@ -59,7 +59,7 @@ print(missing)
 
 # output
 # enter arr1: 1 2 4 5
-# 3
+0# 3
 
 def missing(arr):
     n=len(arr)+1
@@ -74,8 +74,38 @@ print(missing(arr))
 # output
 # enter arr1: 1 2 4 5
 # 3
-
+###########################################
 # to find all missing numbers\
+
+arr = [int(i) for i in input("enter: ").split()]
+
+res = []
+
+for i in range(len(arr)-1):
+    if(arr[i]+1 != arr[i+1]):
+        res += [arr[i]+1]
+        
+print(res)
+# output
+# enter: 1 3 5 7 9 1
+# [2, 4, 6, 8, 10]
+##############################################
+arr = [int(i) for i in input("enter: ").split()] # 1 2 4 5
+
+first = arr[0]
+last = arr[-1]
+res = []
+
+for i in range(first,last+1):
+    if i not in arr:
+        res += [i]
+        
+print(res)
+
+# output
+# enter: 1 3 5 7 9 1
+# [2, 4, 6, 8, 10]
+##########################
 def missing(arr):
     arr=sorted(arr)  # Sort the array to ensure numbers are in order
     n=arr[-1] # Get the last number as the maximum expected value

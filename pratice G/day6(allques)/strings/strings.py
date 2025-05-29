@@ -75,3 +75,11 @@ print(" ".join(cap))
 # hello worls
 # Hello Worls
 ######################################################################################
+# Convert String to Number
+#        "123" → 123
+# Write a function to convert a string to a number (without using parseInt or Number).
+str=input()
+res=0
+for char in str:
+    res=res*10+(ord(char)-ord('0'))
+print(res)
