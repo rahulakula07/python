@@ -322,3 +322,118 @@ for i in range(len(arr)):
             arr[i],arr[j]=arr[j],arr[i]
 print(arr)
 # [10, 11, 21, 25, 64]
+####################################################################################\
+n=[3,4,50,9,11]
+# input=3
+for j in range(len(n)-1):
+    if n[j]>n[j+1]:
+        n[j],n[j+1]=n[j+1],n[j]
+# print(n)
+res=[]
+for i in range(len(n)):
+    # print(i,end=" ")
+    for j in range(len(n)):
+        if i==j:
+            continue
+        for k in range(len(n)):
+            if i==k or j==k:
+                continue
+            for m in range(len(n)):
+                if i==m or j==m or k==m:
+                    continue
+            res+=[[n[i],n[j],n[k],n[m]]]
+# print(res)
+
+mindiff=float("inf")
+arry=[]
+
+for i in res:
+    mn = min(i)
+    mx = max(i)
+    diff = mx - mn  
+    if diff < mindiff:
+        mindiff = diff
+        arry = [i]  
+    elif diff == mindiff:
+        arry.append(i)
+print(arry)
+for i in arry:
+    print(i)
+    break
+# [[9, 11, 50, 50], [9, 50, 11, 50], [11, 9, 50, 50], [11, 50, 9, 50], [50, 9, 11, 50], [50, 11, 9, 50]]
+# [9, 11, 50, 50]
+3#############################################################################
+arr1=[1,[2,3],4,[5,6],7]
+arr2=[]
+for i in arr1:
+    if isinstance(i,list): #[2,3]
+        arr2.extend(i) 
+    else:
+        arr2+=[i] #[]=[] 
+print(arr2)
+# [1, 2, 3, 4, 5, 6, 7]
+####################################################################################
+# You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's.
+
+# Increment the large integer by one and return the resulting array of digits.
+
+ 
+
+# Example 1:
+
+# Input: digits = [1,2,3]
+# Output: [1,2,4]
+# Explanation: The array represents the integer 123.
+# Incrementing by one gives 123 + 1 = 124.
+# Thus, the result should be [1,2,4].
+# Example 2:
+
+# Input: digits = [4,3,2,1]
+# Output: [4,3,2,2]
+# Explanation: The array represents the integer 4321.
+# Incrementing by one gives 4321 + 1 = 4322.
+# Thus, the result should be [4,3,2,2].
+# Example 3:
+
+# Input: digits = [9]
+# Output: [1,0]
+# Explanation: The array represents the integer 9.
+# Incrementing by one gives 9 + 1 = 10.
+# Thus, the result should be [1,0].
+n=[,2,3,4,5,9]
+last=n[len(n)-1]+1
+# print(last)
+for i in n:
+    n[len(n)-1]=last
+    if last>=10:
+        temp=[]
+        for i in range(len(n)-1):
+            temp+=[n[i]]
+        tens=last//10
+        onces=last%10
+        temp+=[tens]
+        temp+=[onces]
+print(temp)
+# print(n)
+
+# [1, 2, 3, 4, 5, 1, 0]
+
+
+
+# time and space complexcity
+arr=[1,2,3]
+number=""
+for i in arr:
+    number+=str(i)
+number=int(number)+1
+
+res=[]
+while(number>0):
+    res=[number%10] +res
+    number=number//10 
+print(res)
+
+######################################################
+
+
+
