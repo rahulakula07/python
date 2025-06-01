@@ -21,3 +21,20 @@ ip=factorial(ip)
 for i in range(len(arr)):
     if arr[i] == ip:
         print(i)
+
+#########################################
+arr= [ 61, 4, 6, 7, 120 , 10 ]
+ip=int(input("enter number: "))#7
+def factorial(s):
+    res=1
+    for i in range(1,s+1):
+        res*=i
+    return res
+ip=factorial(ip)
+found=False
+for i in range(len(arr)):
+    if arr[i] == ip:
+        print(i)
+        found=True
+if not found:
+        print("factorial of" ,ip ,"is not present")
